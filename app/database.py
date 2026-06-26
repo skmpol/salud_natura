@@ -11,6 +11,11 @@ def get_db():
 
 
 def init_db():
+    # Asegurar que el directorio padre de la base de datos exista
+    db_dir = os.path.dirname(DB_PATH)
+    if db_dir:
+        os.makedirs(db_dir, exist_ok=True)
+
     conn = get_db()
     cursor = conn.cursor()
 

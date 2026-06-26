@@ -1,0 +1,13 @@
+.git
+.gitignore
+.agents/
+.venv/
+venv/
+__pycache__/
+*.pyc
+data/
+.env
+Dockerfile
+docker-compose.yml
+*.db
+*.log
