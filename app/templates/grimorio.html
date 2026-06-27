@@ -363,7 +363,12 @@ html,body{height:100%;font-family:'Lato',sans-serif;background:var(--verde);over
 const loteNames = ['Lote I','Lote II','Lote III','Lote IV','Lote V','Lote VI','Lote VII'];
 const loteDescs = ['Lote I · Hierbas suaves','Lote II · Hierbas energizantes','Lote III · Hierbas respiratorias','Lote IV · Hierbas reparadoras','Lote V · Hierbas depurativas','Lote VI · Hierbas femeninas','Lote VII · Hierbas del escudo'];
 
+const imgOverrides = {
+  'Cola de Caballo':'cola_caballo','Diente de Leon':'diente_leon',
+  'Anis Verde':'anis','Ginkgo Biloba':'ginkgo','Anís Verde':'anis'
+};
 function nombreToImg(nombre) {
+  if (imgOverrides[nombre]) return '/static/img/' + imgOverrides[nombre] + '.jpg';
   return '/static/img/' + nombre.toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g,'')
     .replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'') + '.jpg';
