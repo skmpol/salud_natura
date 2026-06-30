@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salud Natura – Sabiduría Ancestral de la Tierra</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="/static/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -14,7 +14,7 @@
     <nav class="navbar">
       <div class="logo">
         <div class="logo-img-wrap">
-          <img src="logo.jpg" alt="Logo Salud Natura" class="logo-img" />
+          <img src="/static/img/logo.jpg" alt="Logo Salud Natura" class="logo-img" />
         </div>
         <div class="logo-text">
           <span class="logo-main">Salud Natura</span>
@@ -26,11 +26,12 @@
         <li><a href="#pilares">Filosofía</a></li>
         <li><a href="#grimorio">El Grimorio</a></li>
         <li><a href="#hierbas">Hierbas</a></li>
-        <li><a href="botiquin.html">Botiquín</a></li>
+        <li><a href="/botiquin">Botiquín</a></li>
+        <li><a href="/taller">Taller</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <a href="grimorio.html#registro" class="btn-registro-nav" onclick="sessionStorage.setItem('abrirRegistro','1')">Registrarse</a>
+      <a href="/grimorio#registro" class="btn-registro-nav" onclick="sessionStorage.setItem('abrirRegistro','1')">Registrarse</a>
     </nav>
   </header>
 
@@ -39,7 +40,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="logo.jpg" alt="Logo Salud Natura" class="hero-logo" />
+        <img src="/static/img/logo.jpg" alt="Logo Salud Natura" class="hero-logo" />
       </div>
       <h1 class="hero-title">Bienvenidos al Grimorio<br><span>de Salud Natura</span></h1>
       <p class="hero-subtitle">Sabiduría Ancestral de la Tierra</p>
@@ -86,7 +87,7 @@
           <a href="#hierbas" class="btn-secondary" id="btn-ver-hierbas">Ver las Hierbas</a>
         </div>
         <div class="grimorio-visual">
-          <a href="grimorio.html" class="book-icon" title="Abrir el Grimorio">
+          <a href="/grimorio" class="book-icon" title="Abrir el Grimorio">
             <div class="book-cover">
               <div class="book-spine-bar"></div>
               <div class="book-corners">
@@ -95,7 +96,7 @@
               </div>
               <div class="book-cover-inner">
                 <div class="book-medallion">
-                  <img src="logo.jpg" alt="Logo"/>
+                  <img src="/static/img/logo.jpg" alt="Logo"/>
                 </div>
                 <div class="book-divider"></div>
                 <p class="book-title">Grimorio<br>Salud Natura</p>
@@ -141,15 +142,15 @@
             const card = document.createElement('div');
             card.className = 'lote-card';
             const items = grupo.map((p,j)=>{
-              const img = p.imagen ? 'img/'+p.imagen : 'img/'+p.nombre_remedio.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'')+'.jpg';
-              return '<li><a class="hierba-link" href="grimorio.html?h='+(i+j)+'"><img class="hierba-icon" src="'+img+'" alt="'+p.nombre_remedio+'"/> '+p.nombre_remedio+'</a></li>';
+              const img = p.imagen ? '/static/img/'+p.imagen : '/static/img/'+p.nombre_remedio.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'')+'.jpg';
+              return '<li><a class="hierba-link" href="/grimorio?h='+(i+j)+'"><img class="hierba-icon" src="'+img+'" alt="'+p.nombre_remedio+'"/> '+p.nombre_remedio+'</a></li>';
             }).join('');
             card.innerHTML = '<div class="lote-header"><span class="lote-num">Lote '+ROMANOS[numLote]+'</span></div><ul>'+items+'</ul>';
             grid.appendChild(card);
           }
         }).catch(()=>{
           // Si el servidor no responde, mostrar mensaje simple
-          document.getElementById('lotes-grid').innerHTML = '<div class="lote-card lote-cta"><p>Abre el servidor para ver todas las hierbas</p><a href="grimorio.html" class="btn-primary small">Ir al Grimorio</a></div>';
+          document.getElementById('lotes-grid').innerHTML = '<div class="lote-card lote-cta"><p>Abre el servidor para ver todas las hierbas</p><a href="/grimorio" class="btn-primary small">Ir al Grimorio</a></div>';
         });
       })();
       </script>
@@ -309,7 +310,7 @@
         </ul>
       </div>
       <div class="sueno-cta">
-        <a href="grimorio.html">Ver fichas de estas plantas en el Grimorio →</a>
+        <a href="/grimorio">Ver fichas de estas plantas en el Grimorio →</a>
       </div>
     </div>
   </section>
@@ -503,7 +504,7 @@
   <footer>
     <div class="container">
       <div class="footer-logo">
-        <img src="logo.jpg" alt="Logo Salud Natura" class="footer-logo-img"/>
+        <img src="/static/img/logo.jpg" alt="Logo Salud Natura" class="footer-logo-img"/>
         <span>Salud Natura</span>
       </div>
       <p class="footer-quote">"El que conoce a los demás es sabio. El que se conoce a sí mismo es iluminado." — Lao Tsé</p>
@@ -511,6 +512,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/static/js/script.js"></script>
 </body>
 </html>
