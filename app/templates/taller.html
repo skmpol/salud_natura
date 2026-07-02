@@ -118,6 +118,41 @@
                     </div>
                 </div>
 
+                <div class="rec-item rec-item-destacado">
+                    <div class="rec-icono">🚀</div>
+                    <div class="rec-texto">
+                        <h3>Cómo arrancar tu propio proyecto desde este prototipo</h3>
+
+                        <p>Este proyecto es una plantilla funcional completa: tiene base de datos, API, panel de administración, frontend y deploy automático. No hace falta empezar de cero. La estrategia es <strong>adaptar este código a tu dominio</strong> antes de escribir una sola línea nueva.</p>
+
+                        <h4>Paso 1 — Definí tu dominio antes de abrir el editor</h4>
+                        <p>Antes de tocar código, respondé estas preguntas en papel: ¿Qué entidades principales tiene tu sistema? ¿Qué datos guarda cada una? ¿Cómo se relacionan entre sí? Por ejemplo, si tu proyecto es una biblioteca: entidades = libros, autores, préstamos. Un libro tiene título, año, ISBN, id_autor. Un préstamo tiene id_libro, id_usuario, fecha. Ese diseño define tus tablas — y cambiar tablas después de tener datos es costoso.</p>
+
+                        <h4>Paso 2 — Pedile al LLM que adapte las configuraciones iniciales</h4>
+                        <p>Una vez que tenés el diseño en papel, hacé un fork de este repositorio y abrilo con tu asistente de IA. Describile tu proyecto y pedile que adapte los archivos clave uno por uno, en este orden:</p>
+                        <ol>
+                            <li><code>settings.py</code> — nombre de la app, versión, configuración general</li>
+                            <li><code>database.py</code> — reemplazar las tablas existentes por las tuyas</li>
+                            <li><code>models.py</code> — los modelos Pydantic que validan los datos que entran por la API</li>
+                            <li><code>main.py</code> — los endpoints GET y POST para cada tabla</li>
+                            <li>Los templates de admin — un ABM (Alta-Baja-Modificación) por tabla</li>
+                        </ol>
+                        <p>No le pidas todo a la vez. Pedí un archivo, revisalo, probalo, y recién entonces pedí el siguiente.</p>
+
+                        <h4>Paso 3 — El ciclo de desarrollo: pensar → pedir → revisar → commitear</h4>
+                        <p>Cada funcionalidad nueva sigue el mismo ciclo: <strong>pensás</strong> qué querés lograr y lo describís en lenguaje natural → <strong>le pedís</strong> al LLM que lo implemente → <strong>revisás</strong> el código que generó (aunque no lo entiendas todo, fijate que tenga sentido) → lo <strong>probás</strong> en el navegador → <strong>commiteás</strong> si funciona. Nunca acumules varios cambios sin commitear: si algo se rompe, no vas a saber qué lo causó.</p>
+
+                        <h4>Paso 4 — Empezá por los datos, no por el diseño</h4>
+                        <p>El error más común es arrancar cambiando colores y tipografías antes de tener los datos funcionando. El diseño visual es lo más fácil de cambiar al final. Lo difícil de cambiar después es la estructura de la base de datos y la lógica del backend. Prioridad: primero que los datos entren y salgan correctamente; después que se vean bien.</p>
+
+                        <h4>Paso 5 — Levantá el servidor local y dejalo corriendo mientras desarrollás</h4>
+                        <p>Con <code>uvicorn app.main:app --reload</code> el servidor se reinicia automáticamente cada vez que guardás un archivo Python. Así podés probar cada cambio de inmediato sin reiniciar nada manualmente. Abrí el navegador en <code>localhost:8000</code> y dejalo al lado del editor. Si algo se rompe, el error aparece en la terminal — copialo y pegáselo al LLM con contexto de qué estabas haciendo.</p>
+
+                        <h4>Una corrección importante a la idea original</h4>
+                        <p>La frase "pedile al LLM que adapte las configuraciones iniciales" es correcta pero incompleta. El LLM va a necesitar que vos le expliques tu dominio con precisión — no alcanza con decirle "hacé un proyecto de biblioteca". Cuanto más específico seas (nombres de tablas, campos, tipos de datos, relaciones, qué hace cada pantalla), mejor va a ser el resultado. El LLM es un colaborador muy capaz, pero el diseño del sistema es decisión tuya.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
