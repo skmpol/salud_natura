@@ -148,8 +148,8 @@
                         <h4>Paso 5 — Levantá el servidor local y dejalo corriendo mientras desarrollás</h4>
                         <p>Con <code>uvicorn app.main:app --reload</code> el servidor se reinicia automáticamente cada vez que guardás un archivo Python. Así podés probar cada cambio de inmediato sin reiniciar nada manualmente. Abrí el navegador en <code>localhost:8000</code> y dejalo al lado del editor. Si algo se rompe, el error aparece en la terminal — copialo y pegáselo al LLM con contexto de qué estabas haciendo.</p>
 
-                        <h4>Una corrección importante a la idea original</h4>
-                        <p>La frase "pedile al LLM que adapte las configuraciones iniciales" es correcta pero incompleta. El LLM va a necesitar que vos le expliques tu dominio con precisión — no alcanza con decirle "hacé un proyecto de biblioteca". Cuanto más específico seas (nombres de tablas, campos, tipos de datos, relaciones, qué hace cada pantalla), mejor va a ser el resultado. El LLM es un colaborador muy capaz, pero el diseño del sistema es decisión tuya.</p>
+                        <h4>El LLM es un colaborador, no un diseñador</h4>
+                        <p>El LLM puede escribir código muy bueno, pero no conoce tu negocio ni tus datos. Cuanto más específico seas al pedirle — nombres de tablas, campos, tipos de datos, relaciones, qué hace cada pantalla — mejor va a ser el resultado. Si le decís "hacé un proyecto de biblioteca" vas a obtener algo genérico que después vas a tener que corregir mucho. Si le decís "necesito una tabla <code>libros</code> con campos título, año, ISBN y un campo <code>id_autor</code> que referencia a la tabla <code>autores</code>" vas a obtener exactamente lo que necesitás. La precisión en el pedido es la habilidad más importante para trabajar bien con IA.</p>
                     </div>
                 </div>
 
