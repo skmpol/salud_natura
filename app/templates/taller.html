@@ -80,6 +80,47 @@
             </div>
         </section>
 
+        <section class="recomendaciones">
+            <h2>Recomendaciones para el desarrollo</h2>
+            <p class="conceptos-intro">Buenas prácticas que evitan la mayoría de los problemas al colaborar en un proyecto real.</p>
+
+            <div class="rec-lista">
+
+                <div class="rec-item">
+                    <div class="rec-icono">📐</div>
+                    <div class="rec-texto">
+                        <h3>Definí los datos antes de escribir código</h3>
+                        <p>Antes de tocar un archivo, pensá qué información necesitás guardar: ¿qué tabla? ¿qué campos? ¿hay relaciones con otras tablas? Por ejemplo, si querés agregar "recetas", preguntate: ¿una receta puede tener varias plantas o solo una? ¿tiene pasos o es texto libre? ¿necesita una foto? Esas decisiones definen la estructura de la base de datos, y cambiarla después de tener datos cuesta mucho más que pensarla bien desde el principio.</p>
+                    </div>
+                </div>
+
+                <div class="rec-item">
+                    <div class="rec-icono">🪜</div>
+                    <div class="rec-texto">
+                        <h3>Hacé cambios pequeños y revisá seguido</h3>
+                        <p>No intentes hacer todo de una vez. Agregá un campo → verificá que se guarda → agregá el formulario → verificá que aparece en pantalla → commit. Cada paso chico es fácil de deshacer si algo falla. Un cambio grande que rompió algo en el medio es difícil de diagnosticar. El historial de Git es tu red de seguridad: un commit por cada cosa que funciona.</p>
+                    </div>
+                </div>
+
+                <div class="rec-item">
+                    <div class="rec-icono">🗂️</div>
+                    <div class="rec-texto">
+                        <h3>Entendé qué archivos se generan y mirales adentro</h3>
+                        <p>Este proyecto genera archivos que no están en el repositorio: la base de datos (<code>data/salud_natura.db</code>), el entorno virtual (<code>.venv/</code>), los archivos de caché de Python (<code>__pycache__/</code>). Entender qué es cada cosa te ayuda a no confundirte: si borrás el <code>.venv</code> tenés que reinstalar dependencias; si borrás el <code>.db</code> perdés todos los datos. Podés explorar la base de datos con <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for SQLite</a> para ver las tablas y los registros directamente.</p>
+                    </div>
+                </div>
+
+                <div class="rec-item">
+                    <div class="rec-icono">🚫</div>
+                    <div class="rec-texto">
+                        <h3>No hardcodees datos en el código</h3>
+                        <p>Hardcodear significa poner un dato directamente en el código en lugar de guardarlo en la base de datos o en la configuración. Si ponés los nombres de las plantas en el HTML, cada vez que cambia una planta tenés que editar el archivo. Si están en la base de datos, las cambiás desde el admin sin tocar código. Como regla: los datos que el negocio puede querer editar van a la BD; la configuración del sistema (claves, rutas, nombre de la app) va a un archivo de settings; solo la lógica va en el código.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <section class="paso">
             <div class="paso-numero">1</div>
             <div class="paso-contenido">
