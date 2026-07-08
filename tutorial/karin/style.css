@@ -31,8 +31,16 @@ main {
 }
 
 .imagen-central img {
-    max-width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
     border-radius: 8px;
     border: 1px solid #e0e0d8;
+}
+
+.imagen-central p {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: inherit;
+    color: inherit;
 }
